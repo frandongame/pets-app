@@ -1,0 +1,4 @@
+- He creado la estructura principal 
+- he creado los archivos docker compose tanto local como neon
+- he creado los archivos de spring boot y he separado cada uno en local y en neon
+- he intentado correr 

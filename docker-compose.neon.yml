@@ -10,10 +10,10 @@ services:
         image: mysql:8.0
       restart: always
       environment:
-        MYSQL_ROOT_PASSWORD: root123
-        MYSQL_DATABASE: productos
-        MYSQL_USER: usuario_app
-        MYSQL_PASSWORD: clave_app
+        MYSQL_ROOT_PASSWORD: clave_root
+        MYSQL_DATABASE: mascotas
+        MYSQL_USER: clave_app
+        MYSQL_PASSWORD: clave_apppassword
       ports:
         - "3306:3306"
       volumes:
