@@ -18,6 +18,3 @@ services:
         - "3306:3306"
       volumes:
         - ./sql:/docker-entrypoint-initdb.d
-      condition: service_healthy
-    ports:
-      - "8080:8080"
