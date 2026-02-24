@@ -2,7 +2,8 @@
 -- Compatible con MySQL 8.x y Spring Boot JPA GenerationType.IDENTITY
 
 CREATE DATABASE IF NOT EXISTS pets CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE pets;
+
+#USE pets;
 
 CREATE TABLE IF NOT EXISTS pet (
   id BIGINT NOT NULL AUTO_INCREMENT,

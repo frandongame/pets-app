@@ -1,20 +1,13 @@
-version: '3.9'
 services:
-  app:
-    build: .
-    container_name: pets-api
+  db:
+    image: mysql:8.0
+    restart: always
     environment:
-      SPRING_PROFILES_ACTIVE: local
-    depends_on:
-      db:
-        image: mysql:8.0
-      restart: always
-      environment:
-        MYSQL_ROOT_PASSWORD: rootpassword
-        MYSQL_DATABASE: pets
-        MYSQL_USER: app
-        MYSQL_PASSWORD: apppassword
-      ports:
-        - "3306:3306"
-      volumes:
-        - ./sql:/docker-entrypoint-initdb.d
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: pets_db
+      MYSQL_USER: usuario_app
+      MYSQL_PASSWORD: clave_app
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./sql/sql_mysql.sql:/docker-entrypoint-initdb.d/sql_mysql.sql

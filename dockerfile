@@ -4,7 +4,7 @@ COPY . .
 RUN chmod +x mvnw || true
 RUN ./mvnw -q -DskipTests package
 
-FROM eclipse-termurin:21-jre
+FROM eclipse-temurin:21-jre
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
