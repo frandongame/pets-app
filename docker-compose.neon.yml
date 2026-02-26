@@ -1,20 +1,8 @@
-version: '3.9'
 services:
-  app:
+  api:
     build: .
     container_name: pets-api
     environment:
       SPRING_PROFILES_ACTIVE: neon
-    depends_on:
-      db:
-        image: mysql:8.0
-      restart: always
-      environment:
-        MYSQL_ROOT_PASSWORD: clave_root
-        MYSQL_DATABASE: mascotas
-        MYSQL_USER: clave_app
-        MYSQL_PASSWORD: clave_apppassword
-      ports:
-        - "3306:3306"
-      volumes:
-        - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - "8080:8080"
