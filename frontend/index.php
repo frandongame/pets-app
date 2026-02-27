@@ -1,12 +1,11 @@
 <?php
 
-$url = "http://localhost:8080/pet/list";
-$data = file_get_contents($url);
+//$url = "http://localhost:8080/pet/list";
+$data = file_get_contents(getenv('API_URL'));
 //Json to Array
 $pets = json_decode($data, true);
 
 ?>
-
 
 <html>
 <head>
