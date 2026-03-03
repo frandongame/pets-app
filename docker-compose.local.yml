@@ -16,10 +16,15 @@ services:
     container_name: pets-api
     environment:
       SPRING_PROFILES_ACTIVE: local
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/pets_db
+      SPRING_DATASOURCE_USERNAME: usuario_app
+      SPRING_DATASOURCE_PASSWORD: clave_app
     ports:
       - "8080:8080"
     depends_on:
-      - db
+      db:
+        condition: service_started
+    restart: on-failure
   frontend:
     build: frontend
     container_name: pets-frontend
